@@ -1,0 +1,158 @@
+/*
+  student: Ishmael Sunday | http://ishmaelsunday.com
+  Course: Code 201: Software Development and Application Foundatmental 
+  Schoool: Code Partners | https://codepartners.net 
+  Project: Click Tracking
+  */
+
+  //declearing an variable that hold an empty array
+  let bmImageArray = [];
+
+  //Here we will specify where in the html images are displayed.
+  let elImgContainer = document.getElementById('image-container');
+
+  //let create a object constructor function
+
+  let bmImage = function( name, universe, filePath, id){
+      this.name = name;
+      this.universe = universe;
+      this.filePath = filePath;
+      this.id = id;
+      this.clicked = 0;
+      this.shown = 0;
+      this.addCliks;
+  };
+
+  //check if localstorage exists
+  if(localStorage.length > 0) {
+      // if so, retrieve stored bmImage Array from  local storage that contains our clicks and shown
+      let getData = localStorage.getItem('localStoragebmImageArr');
+
+      //than reasign the value of bmImageArray to the parsed version of BUs Mall Image array tht  we stored in the local storag
+      bmImageArray  = JSON.parse(getData);
+  } else{
+  //lets create instantces of our object constructor
+
+  let a = new bmImage('A', 'Alphabet', './assets/a.svg', 'a');
+  let b = new bmImage('B', 'Alphabet', './assets/b.svg', 'b');
+  let c = new bmImage('C', 'Alphabet', './assets/c.svg', 'c');
+  let d = new bmImage('D', 'Alphabet', './assets/d.svg', 'd');
+  let e = new bmImage('E', 'Alphabet', './assets/e.svg', 'e');
+  let f = new bmImage('F', 'Alphabet', './assets/f.svg', 'f');
+  let g = new bmImage('G', 'Alphabet', './assets/g.svg', 'g');
+  let h = new bmImage('H', 'Alphabet', './assets/h.svg', 'h');
+  let ia = new bmImage('IA', 'Alphabet', './assets/i.svg', 'ia');
+  let j = new bmImage('J', 'Alphabet', './assets/i.svg', 'j');
+  let k = new bmImage('K', 'Alphabet', './assets/k.svg', 'k');
+  let l = new bmImage('L', 'Alphabet', './assets/l.svg', 'l');
+  let m = new bmImage('M', 'Alphabet', './assets/m.svg', 'm');
+  let n = new bmImage('N', 'Alphabet', './assets/n.svg', 'n');
+  let o = new bmImage('O', 'Alphabet', './assets/o.svg', 'o');
+  let p = new bmImage('P', 'Alphabet', './assets/p.svg', 'p');
+  let q = new bmImage('Q', 'Alphabet', './assets/q.svg', 'q');
+  let r = new bmImage('R', 'Alphabet', './assets/r.svg', 'r');
+  let s = new bmImage('S', 'Alphabet', './assets/s.svg', 's');
+  let t = new bmImage('T', 'Alphabet', './assets/t.svg', 't');
+  let u = new bmImage('U', 'Alphabet', './assets/u.svg', 'u');
+  let v = new bmImage('V', 'Alphabet', './assets/v.svg', 'v');
+  let w = new bmImage('W', 'Alphabet', './assets/w.svg', 'w');
+  let x = new bmImage('X', 'Alphabet', './assets/x.svg', 'x');
+  let y = new bmImage('Y', 'Alphabet', './assets/y.svg', 'y');
+
+  //let add the instances to empty array in line 9
+
+  bmImageArray.push( a,b,c,d,e,f,g,h,ia,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y);
+
+}
+  //Now lets define a function that randomly pick image object from our image array
+
+  function randomImage() {
+      let randomNum = Math.floor(Math.random() * bmImageArray.length);
+
+      //declaring a variabel that will store the image object at the index of our random number
+
+      let imgIndex = bmImageArray[randomNum];
+
+      //return 
+      return imgIndex;
+  }
+
+  //let declare event handler clicked Counter in an event that present user with an object of 3 imgs
+function imgClicked(event) {
+   //set conditions
+   //check..
+   if(event.target.id === firstImg.id) {
+       //do this
+     firstImg.clicked += 1;
+   }
+   //check
+   else if(event.target.id === secondImg) {
+       //do this
+   secondImg.clicked += 1;
+   }
+   //check..
+   else if(event.target.id === thirdImg) {
+     //do this
+     thirdImg.clicked += 1;
+   }
+ //Now lets invoke/call display Image function
+ displayImages();
+ //check to see if it works
+ console.log('even target', event.target);
+ console.log('event', 'firstImg.clicked', 'secondImg.clicked', 'thirdImg.clicked');
+};
+
+//let declare the 3 variables that will eventually hold our img objects  being displayed
+let firstImg;
+let secondImg;
+let thirdImg;
+
+//now let define the we mentioned in line 89 that display our random images (in this case 3 random imgs)
+function displayImages() {
+    //this clears the html container that hold the img /removes previously shouwn images
+   elImgContainer.innerHTML = ''; //elImgContainer is referring to the div container in out html file that hold the images
+   
+   // let create a loop that itarates 3x to display 3 images
+   for(let i = 0; i = 3; i++) {
+       //let declare variable that whose value is that is returned from the randomImg func in line  59
+       let imgObject = randomImage();
+       //especify condition for each
+       if( i === 0) {
+           firstImg = imgObject;
+       }
+       else if(i === 1) {
+           while(imgObject.id === firstImg.id) {
+               imgObject = randomImage();
+               console.log('second while', imgObject.id);
+           }
+          secondImg = imgObject; 
+       } else {
+           while(imgObject.id === firstImg.id || imgObject.id === secondImg.id) {
+               imgObject = randomImage();
+               console.log('third while', imgObject.id);
+           }
+           thirdImg = imgObject; 
+       }
+       //create a new img element
+       let elImg = document.createElement('img'); //img element created
+
+       //append/put the image in the element tag we just created in line 136
+       elImgContainer.appendChild(elImg); // image in
+
+       //set attributes
+       elImg.setAttribute('id', imgObject.id);//this element now has the id of the id of what image object is being displaye at the time.
+      
+       //this attribute gets the image from the folder on the local drive/ or points to that.
+       elImg.src = imgObject.filePath;
+
+       //add EventListner
+       elImg.addEventListener('click',imgClicked);
+
+       //increment 
+       imgObject.shown += 1;
+
+   }
+   
+}
+
+displayImages();
