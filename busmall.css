@@ -1,6 +1,16 @@
+
+/* heading Text */
 h1 {
     text-align: center;
+    color: #555;
 }
+/*width of each img  400. 400 x 3 = 1200(container width in line 11*/
 img {
     width: 400px;
+}
+
+/*centering the images*/
+#image-container {
+    width: 1200px;
+    margin: auto;
 }

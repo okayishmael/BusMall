@@ -5,13 +5,13 @@
   Project: Click Tracking
   */
 
-  //declearing an variable that hold an empty array
+  //declearing an variable that holds an empty array
   let bmImageArray = [];
 
   //Here we will specify where in the html images are displayed.
   let elImgContainer = document.getElementById('image-container');
 
-  //let create a object constructor function
+  //let create an object constructor function
 
   let BmImage = function( name, universe, filePath, id){
       this.name = name;
@@ -26,7 +26,8 @@
   //check if localstorage exists
   if(localStorage.length > 0) {
       // if so, retrieve stored bmImage Array from  local storage that contains our clicks and shown
-      let getData = localStorage.getItem('storagebmImageArr');
+      let getData = localStorage.getItem('storagebmImageArray');
+      console.log(bmImageArray);
 
       //than reasign the value of bmImageArray to the parsed version of BUs Mall Image array tht  we stored in the local storag
       bmImageArray  = JSON.parse(getData);
@@ -41,7 +42,7 @@
   let Flet = new BmImage('Flet', 'Alphabet', './assets/f.svg', 'f');
   let Glet = new BmImage('Glet', 'Alphabet', './assets/g.svg', 'g');
   let Hlet = new BmImage('Hlet', 'Alphabet', './assets/h.svg', 'h');
-  let Ilet = new BmImage('Ilet', 'Alphabet', './assets/i.svg', 'ia');
+  let Ilet = new BmImage('Ilet', 'Alphabet', './assets/i.svg', 'i');
   let Jlet = new BmImage('Jlet', 'Alphabet', './assets/i.svg', 'j');
   let Klet = new BmImage('Klet', 'Alphabet', './assets/k.svg', 'k');
   let Llet = new BmImage('Llet', 'Alphabet', './assets/l.svg', 'l');
@@ -68,6 +69,7 @@
   //Now lets define a function that randomly pick image object from our image array
 
   let randomImage = function() {
+      console.log(bmImageArray);
       let randomNumber = Math.floor(Math.random() * bmImageArray.length);
 
       //declaring a variabel that will store the image object at the index of our random number
@@ -95,7 +97,7 @@ function imgClicked(event) {
  //Now lets invoke/call display Image function
  displayImages();
 
-localStorage.setItem('storagebmImageArr', JSON.stringify(bmImageArray));
+localStorage.setItem('storagebmImageArray', JSON.stringify(bmImageArray));
 displayChart();
  //check to see if it works
  //console.log('even target', event.target);
