@@ -86,7 +86,7 @@ function imgClicked(event) {
    //check..
    if(event.target.id === firstImg.id) {
        //do this
-     firstImg.clicked += 1;
+     firstImg.clicked += 0;
    }else if(event.target.id === secondImg.id) {
        //do this
    secondImg.clicked += 1;
