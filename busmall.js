@@ -34,32 +34,32 @@
   } else{
   //lets create instantces of our object constructor
 
-  let Alet = new BmImage('Alphabet', './assets/a.svg', 'a');
-  let Blet = new BmImage('Alphabet', './assets/b.svg', 'b');
-  let Clet = new BmImage('Alphabet', './assets/c.svg', 'c');
-  let Dlet = new BmImage('Alphabet', './assets/d.svg', 'd');
-  let Elet = new BmImage('Alphabet', './assets/e.svg', 'e');
-  let Flet = new BmImage('Alphabet', './assets/f.svg', 'f');
-  let Glet = new BmImage('Alphabet', './assets/g.svg', 'g');
-  let Hlet = new BmImage('Alphabet', './assets/h.svg', 'h');
-  let Ilet = new BmImage('Alphabet', './assets/i.svg', 'i');
-  let Jlet = new BmImage('Alphabet', './assets/i.svg', 'j');
-  let Klet = new BmImage('Alphabet', './assets/k.svg', 'k');
-  let Llet = new BmImage('Alphabet', './assets/l.svg', 'l');
-  let Mlet = new BmImage('Alphabet', './assets/m.svg', 'm');
-  let Nlet = new BmImage('Alphabet', './assets/n.svg', 'n');
-  let Olet = new BmImage('Alphabet', './assets/o.svg', 'o');
-  let Plet = new BmImage('Alphabet', './assets/p.svg', 'p');
-  let Qlet = new BmImage('Alphabet', './assets/q.svg', 'q');
-  let Rlet = new BmImage('Alphabet', './assets/r.svg', 'r');
-  let Slet = new BmImage('Alphabet', './assets/s.svg', 's');
-  let Tlet = new BmImage('Alphabet', './assets/t.svg', 't');
-  let Ulet = new BmImage('Alphabet', './assets/u.svg', 'u');
-  let Vlet = new BmImage('Alphabet', './assets/v.svg', 'v');
-  let Wlet = new BmImage('Alphabet', './assets/w.svg', 'w');
-  let Xlet = new BmImage('Alphabet', './assets/x.svg', 'x');
-  let Ylet = new BmImage('Alphabet', './assets/y.svg', 'y');
-  let Zlet = new BmImage('Alphabet', './assets/z.svg', 'z');
+  let Alet = new BmImage('Alet','Alphabet', './assets/a.svg', 'a');
+  let Blet = new BmImage('Blet','Alphabet', './assets/b.svg', 'b');
+  let Clet = new BmImage('Clet','Alphabet', './assets/c.svg', 'c');
+  let Dlet = new BmImage('Dlet','Alphabet', './assets/d.svg', 'd');
+  let Elet = new BmImage('Elet','Alphabet', './assets/e.svg', 'e');
+  let Flet = new BmImage('Flet','Alphabet', './assets/f.svg', 'f');
+  let Glet = new BmImage('GLet','Alphabet', './assets/g.svg', 'g');
+  let Hlet = new BmImage('Hlet','Alphabet', './assets/h.svg', 'h');
+  let Ilet = new BmImage('Ilet','Alphabet', './assets/i.svg', 'i');
+  let Jlet = new BmImage('Jlet','Alphabet', './assets/i.svg', 'j');
+  let Klet = new BmImage('Klet','Alphabet', './assets/k.svg', 'k');
+  let Llet = new BmImage('Llet','Alphabet', './assets/l.svg', 'l');
+  let Mlet = new BmImage('Mlet','Alphabet', './assets/m.svg', 'm');
+  let Nlet = new BmImage('Nlet','Alphabet', './assets/n.svg', 'n');
+  let Olet = new BmImage('Olet','Alphabet', './assets/o.svg', 'o');
+  let Plet = new BmImage('Plet','Alphabet', './assets/p.svg', 'p');
+  let Qlet = new BmImage('Qlet','Alphabet', './assets/q.svg', 'q');
+  let Rlet = new BmImage('Rlet','Alphabet', './assets/r.svg', 'r');
+  let Slet = new BmImage('Slet','Alphabet', './assets/s.svg', 's');
+  let Tlet = new BmImage('Tlet','Alphabet', './assets/t.svg', 't');
+  let Ulet = new BmImage('Ulet','Alphabet', './assets/u.svg', 'u');
+  let Vlet = new BmImage('Vlet','Alphabet', './assets/v.svg', 'v');
+  let Wlet = new BmImage('Wlet','Alphabet', './assets/w.svg', 'w');
+  let Xlet = new BmImage('Xlet','Alphabet', './assets/x.svg', 'x');
+  let Ylet = new BmImage('Ylet','Alphabet', './assets/y.svg', 'y');
+  let Zlet = new BmImage('Zlet','Alphabet', './assets/z.svg', 'z');
 
   //let add the instances to empty array in line 9
 
